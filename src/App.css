@@ -1,0 +1,81 @@
+/* 定义默认调色板（例如第一个调色板） */
+:root {
+    --primary-color: #7C444F;
+    --secondary-color: #9F5255;
+    --accent-color: #E16A54;
+    --background-color: #F39E60;
+    --text-color: white;
+}
+
+/* 全局样式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* App 容器 */
+.app-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 各个功能区的样式 */
+.section {
+    flex: 1;
+    min-width: 300px; /* 设置最小宽度，适应手机端 */
+    width: 100%;
+    /*max-width: 600px; !* 限制每个部分的最大宽度 *!*/
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Audio Section 样式 */
+.audio-section {
+    margin-top: 10px;
+}
+
+/*!* Text Section 样式 *!*/
+/*.text-section {*/
+/*    flex-grow: 3; !* 文本区域稍微大一些 *!*/
+/*}*/
+
+/* 调整在小屏幕上的显示方式 */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column; /* 垂直堆叠 */
+        align-items: center;
+    }
+
+    .section {
+        width: 100%; /* 在手机端每个部分占满宽度 */
+        max-width: none; /* 移除最大宽度限制 */
+    }
+}
+
+
+.randomize-button {
+    padding: 10px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
